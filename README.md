@@ -4,6 +4,10 @@ A simple example, a test of the modules that I want to use later.
 
 It's quick and dirty, and veery basic.
 
+**Lua 5.3 is required!**
+`sudo apt-get install liblua5.3`
+
+
 To run: `dub run --build=release`
 
 To connect with a telnet client: `telnet localhost 12345`
