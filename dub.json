@@ -1,0 +1,9 @@
+{
+	"name": "chat",
+	"description": "A minimal D application.",
+	"copyright": "Copyright © 2017, laci",
+	"authors": ["laci"],
+	"dependencies": {
+	"derelict-lua":"*"
+	}
+}
