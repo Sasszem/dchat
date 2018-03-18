@@ -20,3 +20,5 @@ The id is the sender's id
 The `send(id, msg)` send the message to the client with the specified id.
 IDs starts at 0
 The maximum id can be obtained by the `getClientsCount()` function.
+
+This two function should enable you creating various server scripts
