@@ -5,7 +5,7 @@ import std.socket;
 import std.stdio;
 import chat.server;
 
-ubyte[] greeting = cast(ubyte[]) "Hi there!";
+enum greeting = "Hi there\n";
 
 class Client : Thread
 {
@@ -13,10 +13,10 @@ public:
 
     this(Socket socket, byte id, Server ser)
     {
-        sock = socket;
-        assert(sock.blocking() == true);
+        this.sock = socket;
+        debug assert(sock.blocking() == true);
         this.id = id;
-        sv = ser;
+        this.sv = ser;
         super(&run);
         debug writeln("[Client - ", id, "]", "A new client object successfully created!");
     }
