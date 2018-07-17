@@ -22,13 +22,23 @@ void luaLoad()
     L = luaL_newstate();
 
     luaL_openlibs(L);
-
+    lua_atpanic(L, &panic);
 }
 
 extern (C) nothrow
 {
     alias lua_CFunction = int function(lua_State*);
-
+int panic(lua_State* L)
+    {
+        try{
+        writeln("LUA CRASHED!");
+        writeln(fromStringz(lua_tostring(L, -1)));
+writeln(fromStringz(lua_tostring(L, -2)));
+        }
+        catch (Throwable)
+        {}
+        return 0;
+    }
 }
 
 void luaRegister(string name, lua_CFunction f)
